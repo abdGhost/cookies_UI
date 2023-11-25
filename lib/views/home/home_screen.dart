@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/avatar_widget.dart';
 import '../../widgets/card_widget.dart';
 import '../../widgets/cookie_feature_widget.dart';
+import '../../widgets/horizontal_cookie_card_widget.dart';
 import '../../widgets/personal_info_widget.dart';
 import '../../widgets/cookies_bar.dart';
 
@@ -18,33 +19,37 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: background,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 22),
-        child: Column(
-          children: [
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AvatarWidget(),
-                SizedBox(
-                  width: 16,
-                ),
-                PersonalInfoWidget(),
-                Spacer(),
-                CartWidget(),
-              ],
-            ),
-            const CookiesBar(),
-            SizedBox(height: size.height * 0.18),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: cookies.map((e) {
-                  return CookiesCardWidget(
-                    cookie: e,
-                  );
-                }).toList()),
-            const CookieFeatureWidget()
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 22),
+          child: Column(
+            children: [
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AvatarWidget(),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  PersonalInfoWidget(),
+                  Spacer(),
+                  CartWidget(),
+                ],
+              ),
+              const CookiesBar(),
+              SizedBox(height: size.height * 0.18),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: cookies.map((e) {
+                    return CookiesCardWidget(
+                      cookie: e,
+                    );
+                  }).toList()),
+              const CookieFeatureWidget(),
+              const SizedBox(height: 10),
+              const HorizontalCookieCardWidget()
+            ],
+          ),
         ),
       ),
     );
