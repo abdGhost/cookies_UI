@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/avatar_widget.dart';
 import '../../widgets/card_widget.dart';
+import '../../widgets/cookie_feature_widget.dart';
 import '../../widgets/personal_info_widget.dart';
 import '../../widgets/cookies_bar.dart';
 
@@ -13,6 +14,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: background,
       body: Padding(
@@ -32,7 +35,15 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             const CookiesBar(),
-            CookiesCardWidget(cookie: cookies[0])
+            SizedBox(height: size.height * 0.18),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: cookies.map((e) {
+                  return CookiesCardWidget(
+                    cookie: e,
+                  );
+                }).toList()),
+            const CookieFeatureWidget()
           ],
         ),
       ),

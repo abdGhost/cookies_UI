@@ -17,7 +17,7 @@ class PreniumWidget extends StatelessWidget {
           color: orange,
         ),
         SizedBox(
-          width: 16,
+          width: 10,
         ),
         Text(
           'Prenium',
