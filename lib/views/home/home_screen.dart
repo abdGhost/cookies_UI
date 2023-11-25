@@ -1,5 +1,6 @@
 import 'package:cookies_ui_app/colors.dart';
 import 'package:cookies_ui_app/models/cookies.dart';
+import 'package:cookies_ui_app/widgets/bottom_nav_bar.dart';
 import 'package:cookies_ui_app/widgets/cookies_card_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -52,6 +53,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
