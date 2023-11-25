@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/avatar_widget.dart';
 import '../../widgets/card_widget.dart';
 import '../../widgets/personal_info_widget.dart';
+import '../../widgets/cookies_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AvatarWidget(),
                 SizedBox(
@@ -24,9 +26,10 @@ class HomeScreen extends StatelessWidget {
                 ),
                 PersonalInfoWidget(),
                 Spacer(),
-                CartWidget()
+                CartWidget(),
               ],
-            )
+            ),
+            CookiesBar()
           ],
         ),
       ),
