@@ -1,4 +1,6 @@
 import 'package:cookies_ui_app/colors.dart';
+import 'package:cookies_ui_app/models/cookies.dart';
+import 'package:cookies_ui_app/widgets/cookies_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/avatar_widget.dart';
@@ -11,13 +13,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: background,
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 22),
+        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 22),
         child: Column(
           children: [
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AvatarWidget(),
@@ -29,7 +31,8 @@ class HomeScreen extends StatelessWidget {
                 CartWidget(),
               ],
             ),
-            CookiesBar()
+            const CookiesBar(),
+            CookiesCardWidget(cookie: cookies[0])
           ],
         ),
       ),
