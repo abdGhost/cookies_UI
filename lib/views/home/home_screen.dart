@@ -2,6 +2,8 @@ import 'package:cookies_ui_app/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/avatar_widget.dart';
+import '../../widgets/card_widget.dart';
+import '../../widgets/personal_info_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,6 +19,12 @@ class HomeScreen extends StatelessWidget {
             Row(
               children: [
                 AvatarWidget(),
+                SizedBox(
+                  width: 16,
+                ),
+                PersonalInfoWidget(),
+                Spacer(),
+                CartWidget()
               ],
             )
           ],
